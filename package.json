@@ -8,7 +8,9 @@
     "type": "git"
   },
   "scripts": {
-    "start": "",
+    "prestart": "npm run build",
+    "start": "DEBUG=express:* node .",
+    "start:development": "npm run build && nodemon .",
     "test": "_mocha test/**/*.test.js",
     "build": "npm run build:clean && npm run build:code",
     "build:code": "babel src -d build",
