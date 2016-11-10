@@ -1,0 +1,36 @@
+{
+  "name": "classroom-tools-api",
+  "version": "1.0.0",
+  "description": "Classroom Tools API - to help with the classroom",
+  "main": "index.js",
+  "repository": {
+    "url": "https://TylerGarlick@github.com/helio-training/classroom-tools-api",
+    "type": "git"
+  },
+  "scripts": {
+    "start": "",
+    "test": "_mocha test/**/*.test.js",
+    "build": "npm run build:clean && npm run build:code",
+    "build:code": "babel src -d build",
+    "build:clean": "trash build/**/*",
+    "prepublish": "npm run build"
+  },
+  "author": "Tyler Garlick <tjgarlick@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "code": "^4.0.0",
+    "eslint-config-pundits": "^1.0.0",
+    "mocha": "^3.1.2",
+    "trash-cli": "^1.4.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "joi": "^9.2.0",
+    "mongojs": "^2.4.0"
+  }
+}
