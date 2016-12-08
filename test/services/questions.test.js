@@ -4,9 +4,7 @@ import Services from '../../src/services';
 describe('Question Service', () => {
   
   beforeEach(() => {
-    if (db['questions']) {
-      return db.questions.drop();
-    }
+    return db.get('questions').drop();
   });
   
   let service;
@@ -25,13 +23,10 @@ describe('Question Service', () => {
         isActive: true
       };
       
-      return service.create(question).then(() => {
-        return service.all()
-          .then(questions => {
-            expect(questions).to.not.be.empty();
-          });
-      });
-      
+      return service.create(question)
+        .then(result => {
+          expect(question.body).to.equal(result.body);
+        });
     });
     
   });

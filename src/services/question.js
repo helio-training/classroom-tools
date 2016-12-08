@@ -42,7 +42,7 @@ export default class {
    * @returns {Promise<{}>}
    */
   update(id, question = {}) {
-    return this.collection.update({ _id: id }, { $set: question });
+    return this.collection.update({ _id: id }, question);
   }
   
   /**
