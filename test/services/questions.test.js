@@ -31,4 +31,24 @@ describe('Question Service', () => {
     
   });
   
+  describe('#byId(id)', () => {
+    
+    it(`retrieves a question by it's id`, () => {
+      const question = {
+        body: "Which is better Angular 2 or Angular 1?",
+        votes: 0,
+        isActive: true
+      };
+      
+      return service.create(question)
+        .then(result => {
+          return service.byId(result._id)
+            .then(insertedQuestion => {
+              expect(result).to.equal(insertedQuestion);
+            });
+        });
+    });
+    
+  });
+  
 });

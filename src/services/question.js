@@ -51,6 +51,6 @@ export default class {
    * @returns {Promise<{}>}
    */
   remove(id) {
-    return this.collection.remove({ _id: id }, true);
+    return this.collection.remove({ _id: id });
   }
 };
